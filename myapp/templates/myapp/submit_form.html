@@ -8,15 +8,8 @@
 <body>
     <h1>Submit Form</h1>
     <form method="post">
-        <label for="id_first_name">First Name:</label><br>
-        <input type="text" id="id_first_name" name="first_name"><br>
-        
-        <label for="id_last_name">Last Name:</label><br>
-        <input type="text" id="id_last_name" name="last_name"><br>
-        
-        <label for="id_address">Address:</label><br>
-        <input type="text" id="id_address" name="address"><br>
-        
+        {% csrf_token %}
+        {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
     <a href="{% url 'home' %}">Back to Home</a>
